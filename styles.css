@@ -1,0 +1,131 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #ddf0ea;
+}
+
+.wrapper {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  transform: scale(2);
+}
+
+.wrapper .inner {
+  position: absolute;
+  z-index: 6;
+  height: 80px;
+  width: 80px;
+  background: #ddf0ea;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  margin: -40px 0 0 -40px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+
+.wrapper .circle .bar .progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0b8c4c;
+  border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+
+.wrapper .circle .left .progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.wrapper .circle .right {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+
+.wrapper .circle .right .progress {
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+
+@keyframes right {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.wrapper .num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0b8c4c;
+}
+
+.wrapper .circle .dot {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 8s linear both;
+  transform-origin: 0% 50%;
+}
+
+@keyframes dot {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotate(270deg);
+    z-index: 4;
+  }
+}
+
+.wrapper .circle .dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #0b8c4c;
+  border-radius: 100%;
+}
